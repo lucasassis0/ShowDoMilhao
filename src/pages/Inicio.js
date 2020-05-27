@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, Image} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import logo from '../img/ShowDoMilhao.jpeg'
+import logo from '../images/logo.png'
+
 function Inicio({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
@@ -13,8 +14,8 @@ function Inicio({navigation}) {
             </View>
             <View style={styles.buttonView}>
                 <TouchableOpacity 
-                style={styles.button}
-                onPress={() => {navigation.navigate('Login')}}
+                    style={styles.button}
+                    onPress={() => {navigation.navigate('PaginaHome')}}
                 >
                     <Text style={styles.buttonText}>Iniciar</Text>
                 </TouchableOpacity>
@@ -26,7 +27,7 @@ function Inicio({navigation}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'blue'
+        backgroundColor: '#172178'
     },
     logoView: {
         justifyContent: 'center',
@@ -34,8 +35,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     logo: {
-        
-        width: 200,
+        width: 250,
         height: 120
     },
     buttonView: {
@@ -45,10 +45,12 @@ const styles = StyleSheet.create({
     },
     button: {
         justifyContent: 'center',
-        backgroundColor: 'red',
+        backgroundColor: '#b71b1b',
         width: 150,
         height: 65,
         shadowColor: "#000",
+        borderWidth: 1,
+        borderColor: 'gold',
         shadowOffset: {
             width: 0,
             height: 6,
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
     buttonText: {
         textAlign: "center",
         fontSize: 24,
-        color: 'yellow',
+        color: '#EBCD06',
     }
 })
 
