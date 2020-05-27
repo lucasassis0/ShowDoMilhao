@@ -27,7 +27,7 @@ function Inicio({navigation}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'blue'
+        backgroundColor: '#172178'
     },
     logoView: {
         justifyContent: 'center',
@@ -45,10 +45,12 @@ const styles = StyleSheet.create({
     },
     button: {
         justifyContent: 'center',
-        backgroundColor: 'red',
+        backgroundColor: '#b71b1b',
         width: 150,
         height: 65,
         shadowColor: "#000",
+        borderWidth: 1,
+        borderColor: 'gold',
         shadowOffset: {
             width: 0,
             height: 6,
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
     buttonText: {
         textAlign: "center",
         fontSize: 24,
-        color: 'yellow',
+        color: '#EBCD06',
     }
 })
 
