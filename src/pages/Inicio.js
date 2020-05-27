@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, Image} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import logo from '../img/ShowDoMilhao.jpeg'
+import logo from '../images/logo.png'
+
 function Inicio({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
@@ -13,8 +14,8 @@ function Inicio({navigation}) {
             </View>
             <View style={styles.buttonView}>
                 <TouchableOpacity 
-                style={styles.button}
-                onPress={() => {navigation.navigate('Login')}}
+                    style={styles.button}
+                    onPress={() => {navigation.navigate('PaginaHome')}}
                 >
                     <Text style={styles.buttonText}>Iniciar</Text>
                 </TouchableOpacity>
@@ -34,8 +35,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     logo: {
-        
-        width: 200,
+        width: 250,
         height: 120
     },
     buttonView: {
