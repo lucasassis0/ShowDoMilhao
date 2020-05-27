@@ -17,7 +17,7 @@ const Stack = createStackNavigator()
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Inicio"> 
+      <Stack.Navigator initialRouteName="Parou"> 
         <Stack.Screen name="Inicio" component={Inicio}
               options={{title: ' ', headerTransparent: 1}}
         />
@@ -26,7 +26,7 @@ function App() {
         <Stack.Screen name="PaginaPerfil" component={PaginaPerfil} />
         <Stack.Screen name="PaginaCadastraJodador" component={PaginaCadastraJogador} />
         <Stack.Screen name="PaginaRanking" component={PaginaRanking} />
-        <Stack.Screen name="Parou!" component={PaginaFimDeJogo}
+        <Stack.Screen name="Parou" component={PaginaFimDeJogo}
           options={{
             title: ' ', headerTransparent: 1
           }} />

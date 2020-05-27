@@ -1,12 +1,13 @@
 import 'react-native-gesture-handler'
 import React from 'react'
-import { Text, View, Button, StyleSheet, Image, SafeAreaView, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, Image, SafeAreaView, TouchableOpacity } from 'react-native'
+import logo from '../images/logo.png'
 
 const PaginaFimDeJogo = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Image source={require('../images/logo.png')}
+                <Image source={logo}
                     style={styles.logo} />
             </View>
             <View style={styles.caixaDeTexto}>
