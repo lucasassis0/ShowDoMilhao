@@ -12,12 +12,12 @@ import PaginaRanking from './src/pages/paginaRanking'
 import PaginaFimDeJogo from './src/pages/paginaFimDeJogo'
 
 
-const Stack = createStackNavigator()  
+const Stack = createStackNavigator()
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="inicio"> 
+      <Stack.Navigator initialRouteName="Parou"> 
         <Stack.Screen name="Inicio" component={Inicio}
               options={{title: ' ', headerTransparent: 1}}
         />
@@ -26,7 +26,10 @@ function App() {
         <Stack.Screen name="PaginaPerfil" component={PaginaPerfil} />
         <Stack.Screen name="PaginaCadastraJodador" component={PaginaCadastraJogador} />
         <Stack.Screen name="PaginaRanking" component={PaginaRanking} />
-        <Stack.Screen name="PaginaFimDeJogo" component={PaginaFimDeJogo} />
+        <Stack.Screen name="Parou" component={PaginaFimDeJogo}
+          options={{
+            title: ' ', headerTransparent: 1
+          }} />
       </Stack.Navigator>
     </NavigationContainer>
   )
