@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Text, Image} from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import logo from '../img/ShowDoMilhao.jpeg'
+import logo from '../img/logo.png'
 function Inicio({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
@@ -34,8 +34,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     logo: {
-        
-        width: 200,
+        width: 250,
         height: 120
     },
     buttonView: {

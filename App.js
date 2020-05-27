@@ -16,11 +16,7 @@ class App extends React.Component{
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Inicio" component={Inicio}
-            options={{title: ' ', headerStyle: {
-              backgroundColor: 'blue',
-              borderBottomColor: 'blue',
-              borderBottomWidth: 1
-            }}}
+            options={{title: ' ', headerTransparent: 1}}
           />
           <Stack.Screen name='Login' component={Login}
           
