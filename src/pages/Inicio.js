@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, Image} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import logo from '../images/logo.png'
+
 function Inicio({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
