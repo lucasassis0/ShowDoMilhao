@@ -28,12 +28,9 @@ const styles = {
         alignItems: 'center',
         flex: 1,
         backgroundColor: '#03045e',
-
-
     },
     containerButton: {
         flex: 2,
-
     },
     logo: {
         margin: 10,
@@ -48,8 +45,6 @@ const styles = {
         borderWidth: 2,
         margin: 20,
         borderRadius: 15,
-
-
     },
     iconInput: {
         height: 10,

@@ -17,12 +17,16 @@ const styles = {
     pergunta: {
         justifyContent: 'center',
         alignItems: 'center',
-        borderWidth: 1,
+        borderWidth: 2,
         backgroundColor: '#B71B1B',
         flex: 1,
-        borderRadius: 50
+        borderRadius: 20,
+        borderBottomColor: "#bbb",
+        backgroundColor: '#B71B1B',
+        borderColor: '#f6aa1c',
     },
     perguntaTexto: {
+        fontSize: 18,
         color: '#FAFF00',
         alignSelf: 'center',
         fontWeight: 'bold',
