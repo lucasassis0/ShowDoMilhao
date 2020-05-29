@@ -1,21 +1,39 @@
 import React, { useState } from 'react'
 import { Text, View, TouchableOpacity, Alert } from 'react-native'
 import { Overlay, Button } from 'react-native-elements'
-const Alternativas = ({ alternativas, correta }) => {
-    const [visible, setVisible] = useState(false)
+const Alternativas = ({ alternativas, correta, notificaResposta }) => {
+    
+    // const [visible, setVisible] = useState(false)
 
-    const toggleOverlay = () => {
-        setVisible(!visible);
-    }
+    const respostaCerta = alternativas[correta]
 
-    const alternativa = alternativas.map(alter => {
+    // const verificarRespota = () => {
+    //     const respostaCerta = alternativas[correta]
+    // }
+
+    // const toggleOverlay = () => {
+    //     setVisible(!visible);
+    // // }
+
+    // const RespostaErrada = () => {
+    //     return (
+    //         <Overlay isVisible={true} onBackdropPress={toggleOverlay}>
+    //             <Text style={{ height: 50, lineHeight: 50 }}>Voce está certo disso ? {respostaCerta}</Text>
+    //             <Button title='Confirmar resposta !' onPress={() => { }} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
+    //         </Overlay>
+    //     )
+    // }
+
+
+    const alternativa = alternativas.map((alter,index) => {
         return (
-            <View style={styles.container}>
-                <TouchableOpacity style={styles.alternativas} onPress={() => { Alert.alert('ola') }}>
-                    <Text style={styles.alternativasNum}>{`${1}`}</Text>
+            <View key={alter} style={styles.container}>
+                <TouchableOpacity style={styles.alternativas} onPress={() => {notificaResposta(respostaCerta === alter, alter)}}>
+                    <Text style={styles.alternativasNum}>{`${index + 1}`}</Text>
                     <Text style={styles.alternativasTexto}> {alter}</Text>
-                    {/* <Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
-                        <Text style={{}}>Ola </Text>
+                    {/* <Overlay isVisible={true} onBackdropPress={toggleOverlay}>
+                        <Text style={{ height: 50, lineHeight: 50 }}>Voce está certo disso ? {respostaCerta}</Text>
+                        <Button title='Confirmar resposta !' onPress={() => { }} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
                     </Overlay> */}
                 </TouchableOpacity>
             </View>

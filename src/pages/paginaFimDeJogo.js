@@ -3,7 +3,8 @@ import React from 'react'
 import { Text, View, StyleSheet, Image, SafeAreaView, TouchableOpacity } from 'react-native'
 import logo from '../images/logo.png'
 
-const PaginaFimDeJogo = ({ navigation }) => {
+const PaginaFimDeJogo = ({ navigation, route }) => {
+   
     return (
         <SafeAreaView style={styles.container}>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

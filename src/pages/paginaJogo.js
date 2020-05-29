@@ -1,29 +1,71 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Text, View, } from 'react-native'
-import { Button } from 'react-native-elements'
-import Perguntas from '../components/perguntas'
+import {Button  } from 'react-native-elements'
+import Perguntas from '../components/monstraPerguntas'
 import Alternativas from '../components/alternativas'
 import Posicao from '../components/posicao'
-const PaginaJogo = () => {
-    const questions = require('../db/questions.json')
-    let num = Math.floor(Math.random() * 50)
-    let perguntas = questions[num]
-    let perguntasRespondidas = []
-    perguntasRespondidas.push(num)
-    let verifica = perguntasRespondidas.includes(num)
 
+const perguntas = require('../db/questions.json')
+const PaginaJogo = ({ navigation }) => {
 
-    const pergunta = perguntas.Name
-    const alternativa = perguntas.Answers
-    const correta = perguntas.CorrectAnswer
+    const [perguntasRespondidas, setPerguntasRespondidas] = useState({})
+    const [indicePergunta, geraNovaPergunta] = useState(0)
+    const [pulo, setPulo] = useState(0)
+    const [buttonPulo, setButtonPulo] = useState(false)
+    const geraIndices = (perguntasRespondidas) => {
+        let num = Math.floor(Math.random() * 50)
+        if (perguntasRespondidas[num]) {
+            return geraIndices(perguntasRespondidas)
+        } else {
+            perguntasRespondidas[num] = num
+            return num
+        }
+    }
+
+    const numero = geraIndices(perguntasRespondidas)
+    const pergunta = perguntas[numero]
+    const alternativa = pergunta.Answers
+    const correta = pergunta.CorrectAnswer
+
+    const reiniciaJogo = () => {
+        setPerguntasRespondidas({})
+        geraNovaPergunta(0)
+        setPulo(0)
+        setButtonPulo(false)
+    }
+
+    const pular = () => {
+        if(pulo < 3) {
+            setPulo(pulo + 1)
+            if(pulo == 2){
+                setButtonPulo(true)
+            }
+        }else{
+            console.log('voce pulou 3 vezes')
+        }
+    }
+
+    const notificaResposta = (acertou, alter) => {
+        if (indicePergunta > 15) {
+            reiniciaJogo()
+            navigation.navigate('Parou')
+        } else if (acertou) {
+            geraNovaPergunta(indicePergunta + 1)
+        } else {
+            reiniciaJogo()
+            navigation.navigate('Parou')
+        }
+
+    }
+
 
     return (
         <View style={styles.container}>
             <Perguntas pergunta={pergunta} />
-            <Alternativas alternativas={alternativa} correta={correta} />
-            <Posicao />
+            <Alternativas alternativas={alternativa} correta={correta} notificaResposta={notificaResposta} />
+            <Posicao indice={indicePergunta} />
             <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', }}>
-                <Button title='Pular' titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
+                <Button title='Pular' onPress={pular} disabled={buttonPulo} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
                 <Button title='Parar' titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
             </View>
         </View>

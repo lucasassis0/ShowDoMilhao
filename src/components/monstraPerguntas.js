@@ -2,12 +2,12 @@ import React from 'react'
 import { Text, View, } from 'react-native'
 
 const Perguntas = ({pergunta}) => {
-    
+    const nomePergunta = pergunta.Name
     return (
         <View style={styles.pergunta}>
             <Text style={styles.perguntaTexto}>
                 {
-                    pergunta
+                    nomePergunta
                 }
             </Text>
         </View>
