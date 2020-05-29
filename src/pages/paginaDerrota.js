@@ -2,13 +2,8 @@ import 'react-native-gesture-handler'
 import React from 'react'
 import { Text, View, StyleSheet, Image, SafeAreaView, TouchableOpacity } from 'react-native'
 import logo from '../images/logo.png'
-import resultado from '../components/resultado'
 
-const PaginaFimDeJogo = ({ route, navigation }) => {
-    // const { res, premio } = route.params
-    const res = 'vitoria'
-    const premio = '1 Milhão!'
-
+const PaginaDerrota = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -16,7 +11,8 @@ const PaginaFimDeJogo = ({ route, navigation }) => {
                     style={styles.logo} />
             </View>
             <View style={styles.caixaDeTexto}>
-                {resultado(res, premio)}
+                <Text style={styles.texto}> Resposta errada, você perdeu! {'\n\n'} Sua premiação foi: {'\n'} 1000</Text>
+
             </View>
             <View style={styles.containerButton}>
                 <TouchableOpacity style={styles.button}
@@ -31,7 +27,7 @@ const PaginaFimDeJogo = ({ route, navigation }) => {
         </SafeAreaView>
     )
 }
-export default PaginaFimDeJogo
+export default PaginaDerrota
 
 const styles = StyleSheet.create({
     container: {
@@ -60,6 +56,14 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'flex-start',
         flexDirection: 'row'
+    },
+    texto: {
+        // flex: 1,
+        textAlign: 'center',
+        color: '#EBCD06',
+        fontSize: 25,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     button: {
         justifyContent: 'space-evenly',
