@@ -19,7 +19,7 @@ const Stack = createStackNavigator()
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="PaginaLogin">
+      <Stack.Navigator initialRouteName="Inicio"> 
         <Stack.Screen name="Inicio" component={Inicio}
           options={{ title: ' ', headerTransparent: 1 }}
         />

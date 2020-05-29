@@ -1,6 +1,5 @@
 import React from 'react'
 import { Text, View, Image } from 'react-native'
-import { TextInput } from 'react-native-gesture-handler';
 import Botao from '../components/Botao'
 
 const PaginaHome = ({ navigation }) => {
@@ -11,18 +10,13 @@ const PaginaHome = ({ navigation }) => {
                 style={styles.logo}
             />
             <View style={styles.containerButton}>
-                <TextInput style={styles.textInput} />
-                <Botao title={'Jogar'} onPress={() => navigation.navigate('PaginaJogo')} />
-                <Botao title={'Ranking'} onPress={() => navigation.navigate('PaginaPerfil')} />
-
+                <Botao title={'Jogar'} onPress={() => { navigation.navigate('PaginaJogo')}} />
+                <Botao title={'Ranking'} onPress={() => { navigation.navigate('PaginaRanking')}}/>
             </View>
 
         </View>
-
     )
-
 }
-
 const styles = {
     container: {
         alignItems: 'center',
@@ -40,26 +34,6 @@ const styles = {
         flex: 1,
         width: 400,
     },
-    textInput: {
-        height: 100,
-        width: 350,
-        backgroundColor: '#9a031e',
-        borderColor: '#f6aa1c',
-        borderWidth: 2,
-        margin: 20,
-        borderRadius: 15,
-
-
-    },
-    iconInput: {
-        height: 10,
-        width: 50,
-        backgroundColor: '#03045e',
-        borderColor: '#f6aa1c',
-        borderWidth: 2,
-        margin: 20,
-        borderRadius: 50
-    }
 
 }
 export default PaginaHome;
