@@ -2,8 +2,13 @@ import 'react-native-gesture-handler'
 import React from 'react'
 import { Text, View, StyleSheet, Image, SafeAreaView, TouchableOpacity } from 'react-native'
 import logo from '../images/logo.png'
+import resultado from '../components/resultado'
 
-const PaginaFimDeJogo = ({ navigation }) => {
+const PaginaFimDeJogo = ({ route, navigation }) => {
+    // const { res, premio } = route.params
+    const res = 'vitoria'
+    const premio = '1 Milhão!'
+
     return (
         <SafeAreaView style={styles.container}>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -11,9 +16,7 @@ const PaginaFimDeJogo = ({ navigation }) => {
                     style={styles.logo} />
             </View>
             <View style={styles.caixaDeTexto}>
-                <Text style={styles.texto}> Você decidiu parar! {'\n'} Sua premiação foi: {'\n'} 2000</Text>
-                {/* <Text style = {styles.texto}> Sua premiação foi:</Text> */}
-                {/* <Text style = {styles.texto}> 2000</Text> */}
+                {resultado(res, premio)}
             </View>
             <View style={styles.containerButton}>
                 <TouchableOpacity style={styles.button}
@@ -24,10 +27,6 @@ const PaginaFimDeJogo = ({ navigation }) => {
                     onPress={() => { navigation.navigate('PaginaHome') }}>
                     <Text style={styles.buttonText}>Menu</Text>
                 </TouchableOpacity>
-                {/* <TouchableOpacity style = {styles.button}
-                onPress = {() =>{}}>
-                    <Text style = {styles.buttonText}>Jogar Novamente</Text>
-                </TouchableOpacity> */}
             </View>
         </SafeAreaView>
     )
@@ -61,14 +60,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'flex-start',
         flexDirection: 'row'
-    },
-    texto: {
-        // flex: 1,
-        textAlign: 'center',
-        color: '#EBCD06',
-        fontSize: 25,
-        justifyContent: 'center',
-        alignItems: 'center'
     },
     button: {
         justifyContent: 'space-evenly',
