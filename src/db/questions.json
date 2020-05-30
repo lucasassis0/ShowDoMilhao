@@ -133,7 +133,7 @@
     },
     {
         "Id": 23,
-        "Name": "Qual cantora tinha o apelido de “Ternurinha” na época da jovem guarda?",	
+        "Name": "Qual cantora tinha o apelido de 'Ternurinha' na época da jovem guarda?",	
         "Answers": ["SILVINHA", "WANDERLÉIA", "GRETCHEN", "MARTINHA"],
         "CorrectAnswer": 1
     },
@@ -193,7 +193,7 @@
     },
     {
         "Id": 33,
-        "Name": "Qual cantor ficou conhecido como “o rei do rock”?",
+        "Name": "Qual cantor ficou conhecido como 'o rei do rock' ?",
         "Answers": ["FRANK SINATRA", "LITTLE RICHARD", "ELVIS PRESLEY", "RICHIE VALENS"],
         "CorrectAnswer": 2
     },
@@ -253,7 +253,7 @@
     },
     {
         "Id": 43,
-        "Name": "De acordo com a Bíblia, qual era o “fruto proibido”?",
+        "Name": "De acordo com a Bíblia, qual era o 'fruto proibido' ?",
         "Answers": ["MAMÃO", "MAÇÃ", "UVA", "ABACAXI"],
         "CorrectAnswer": 1
     },

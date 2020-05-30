@@ -9,6 +9,8 @@ const PaginaFimDeJogo = ({ route, navigation }) => {
     const res = 'vitoria'
     const premio = '1 Milhão!'
 
+const PaginaFimDeJogo = ({ navigation, route }) => {
+
     return (
         <SafeAreaView style={styles.container}>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

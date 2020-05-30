@@ -22,12 +22,9 @@ const styles = {
         alignItems: 'center',
         flex: 1,
         backgroundColor: '#03045e',
-
-
     },
     containerButton: {
         flex: 2,
-
     },
     logo: {
         margin: 10,
@@ -35,5 +32,23 @@ const styles = {
         width: 400,
     },
 
-}
+    textInput: {
+        height: 100,
+        width: 350,
+        backgroundColor: '#9a031e',
+        borderColor: '#f6aa1c',
+        borderWidth: 2,
+        margin: 20,
+        borderRadius: 15,
+    },
+    iconInput: {
+        height: 10,
+        width: 50,
+        backgroundColor: '#03045e',
+        borderColor: '#f6aa1c',
+        borderWidth: 2,
+        margin: 20,
+        borderRadius: 50
+    }
+
 export default PaginaHome;
