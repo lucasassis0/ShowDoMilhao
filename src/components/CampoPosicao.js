@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 
 
-const Botao = (props) => {
+const CampoPosicao = (props) => {
     return (
         <TouchableOpacity style={styles.styleButton}
             onPress={props.onPress}
@@ -25,7 +25,7 @@ const styles = {
         borderColor: '#ffdd55',
         height: 40,
         width: 350,
-        backgroundColor: '#9a031e',
+        backgroundColor: '#124e78',
         borderWidth: 2,
         margin: 20,
         borderRadius: 11,
@@ -41,4 +41,4 @@ const styles = {
     },
 
 }
-export default Botao;
+export default CampoPosicao;
