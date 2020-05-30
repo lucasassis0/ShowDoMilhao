@@ -4,12 +4,8 @@ import { Text, View, StyleSheet, Image, SafeAreaView, TouchableOpacity } from 'r
 import logo from '../images/logo.png'
 import resultado from '../components/resultado'
 
-const PaginaFimDeJogo = ({ route, navigation }) => {
-    // const { res, premio } = route.params
-    const res = 'vitoria'
-    const premio = '1 Milhão!'
-
 const PaginaFimDeJogo = ({ navigation, route }) => {
+    const { indicePremio, resposta } = route.params.data
 
     return (
         <SafeAreaView style={styles.container}>
@@ -18,7 +14,7 @@ const PaginaFimDeJogo = ({ navigation, route }) => {
                     style={styles.logo} />
             </View>
             <View style={styles.caixaDeTexto}>
-                {resultado(res, premio)}
+                {resultado(resposta, indicePremio)}
             </View>
             <View style={styles.containerButton}>
                 <TouchableOpacity style={styles.button}

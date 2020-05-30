@@ -50,5 +50,5 @@ const styles = {
         margin: 20,
         borderRadius: 50
     }
-
+}
 export default PaginaHome;

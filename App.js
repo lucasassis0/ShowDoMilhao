@@ -19,23 +19,19 @@ const Stack = createStackNavigator()
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Inicio"> 
-        <Stack.Screen name="Inicio" component={Inicio}
-          options={{ title: ' ', headerTransparent: 1 }}
-        />
+      <Stack.Navigator initialRouteName="Inicio" screenOptions={header}> 
+        <Stack.Screen name="Inicio" component={Inicio}/>
         <Stack.Screen name="PaginaHome" component={PaginaHome} />
-        <Stack.Screen name="PaginaLogin" component={PaginaLogin} options = {{ title: ' ', headerTransparent: 1}} />
+        <Stack.Screen name="PaginaLogin" component={PaginaLogin} />
         <Stack.Screen name="PaginaJogo" component={PaginaJogo} />
         <Stack.Screen name="PaginaPerfil" component={PaginaPerfil} />
         <Stack.Screen name="PaginaCadastraJodador" component={PaginaCadastraJogador} />
         <Stack.Screen name="PaginaRanking" component={PaginaRanking} />
         <Stack.Screen name="Parou" component={PaginaFimDeJogo} />
-        <Stack.Screen name="Derrota" component={PaginaDerrota}
-          options={{
-            title: ' ', headerTransparent: 1
-          }} />
+        <Stack.Screen name="Derrota" component={PaginaDerrota} />
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
 export default App
+const header = { title: ' ', headerTransparent: 1 }
