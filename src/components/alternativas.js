@@ -1,40 +1,22 @@
 import React, { useState } from 'react'
 import { Text, View, TouchableOpacity, Alert, Modal } from 'react-native'
 import { Overlay, Button } from 'react-native-elements'
-import { TouchableHighlight } from 'react-native-gesture-handler'
+import ModalAlternativas from './modalAlternativas'
 const Alternativas = ({ alternativas, correta, notificaResposta }) => {
 
 
     const respostaCerta = alternativas[correta]
     const [modalVisible, setModalVisible] = useState(false);
+    const [respostaEscolhida, setResposta] = useState('')
 
 
     const alternativa = alternativas.map((alter, index) => {
         return (
             <View key={alter} style={styles.container}>
-                <Modal
-                    animationType="fade"
-                    transparent={true}
-                    visible={modalVisible}
-                >
-                    <View style={styles.centeredView}>
-                        <View style={styles.modalView}>
-                            <Text>Você está certo disso ? Posso perguntas ?</Text>
-                            <View style={{ flexDirection: "row" }}>
-                                <TouchableOpacity style={styles.openButton} onPress={()=> setModalVisible(!modalVisible)}>
-                                    <Text style={{color: 'yellow', fontWeight: "bold"}}>Cancelar</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={[styles.openButton, {...styles, marginLeft: 10}]} onPress={() => { notificaResposta(respostaCerta === alter, alter), setModalVisible(!modalVisible) }} >
-                                    <Text style={{color: 'yellow', fontWeight: "bold"}}>Confirmar</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </View>
-                </Modal>
-                <View key={alter} style={styles.container}>
-                    <TouchableOpacity style={styles.alternativas} onPress={() => setModalVisible(true)
-                        // 
-                    }>
+                <View style={styles.container}>
+                    <TouchableOpacity style={styles.alternativas} onPress={() => {
+                        setModalVisible(true), setResposta(alter)
+                    }}>
                         <Text style={styles.alternativasNum}>{`${index + 1}`}</Text>
                         <Text style={styles.alternativasTexto}> {alter}</Text>
                     </TouchableOpacity>
@@ -48,6 +30,32 @@ const Alternativas = ({ alternativas, correta, notificaResposta }) => {
             {
                 alternativa
             }
+            {/* <ModalAlternativas
+                notificaResposta={notificaResposta}
+                visible={true}
+                respostaEscolhida={respostaEscolhida}
+                respostaCerta={respostaCerta} /> */}
+            <Modal
+                animationType="fade"
+                transparent={true}
+                visible={modalVisible}
+            >
+                <View style={styles.centeredView}>
+                    <View style={styles.modalView}>
+                        <Text>Você está certo disso ? Posso perguntas ?</Text>
+                        <View style={{ flexDirection: "row" }}>
+                            <TouchableOpacity style={styles.openButton} onPress={() => setModalVisible(!modalVisible)}>
+                                <Text style={{ color: 'yellow', fontWeight: "bold" }}>Cancelar</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={[styles.openButton, { ...styles, marginLeft: 10 }]}
+                                onPress={() => { notificaResposta(respostaCerta === respostaEscolhida), setModalVisible(!modalVisible)
+                                }} >
+                                <Text style={{ color: 'yellow', fontWeight: "bold" }}>Confirmar</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </View>
+            </Modal>
         </View>
     )
 }
@@ -62,7 +70,7 @@ const styles = {
         borderRadius: 20,
         padding: 10,
         elevation: 2
-      },
+    },
     centeredView: {
         flex: 1,
         justifyContent: "center",

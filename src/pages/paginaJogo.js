@@ -14,6 +14,7 @@ const PaginaJogo = ({ navigation }) => {
     const [pulo, setPulo] = useState(0)
     const [buttonPulo, setButtonPulo] = useState(false)
     const [visible, setVisible] = useState(false)
+    const [premio, setPremio] = useState([])
     
     const toggleOverlay = () => {
     setVisible(!visible);
@@ -40,9 +41,14 @@ const PaginaJogo = ({ navigation }) => {
         setButtonPulo(false)
     }
 
+    const parar = () => {
+        navigation.navigate('Parou', {data:{ indicePremio: indicePergunta, resposta: 'PAROU' }})
+    }
+
     const pular = () => {
         if (pulo < 3) {
             setPulo(pulo + 1)
+            Alert.alert('voce pulou')
             if (pulo == 2) {
                 setButtonPulo(true)
             }
@@ -51,16 +57,15 @@ const PaginaJogo = ({ navigation }) => {
         }
     }
 
-    const notificaResposta = (acertou, alter) => {
+    const notificaResposta = (acertou) => {
         if (indicePergunta > 15) {
             reiniciaJogo()
-            navigation.navigate('Parou')
+            navigation.navigate('Parou',{data:{ indicePremio: indicePergunta, resposta: acertou}})
         } else if (acertou) {
             geraNovaPergunta(indicePergunta + 1)
-
         } else {
             reiniciaJogo()
-            navigation.navigate('Parou')
+            navigation.navigate('Parou',{data:{ indicePremio: indicePergunta, resposta: acertou}})
         }
 
     }
@@ -69,10 +74,10 @@ const PaginaJogo = ({ navigation }) => {
         <View style={styles.container}>
             <Perguntas pergunta={pergunta} />
             <Alternativas alternativas={alternativa} correta={correta} notificaResposta={notificaResposta} />
-            <Posicao indice={indicePergunta} />
+            <Posicao indice={indicePergunta} notificaResposta={notificaResposta}/>
             <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', }}>
                 <Button title='Pular' onPress={pular} disabled={buttonPulo} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
-                <Button title='Parar' titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
+                <Button title='Parar' onPress={parar} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
             </View>
         </View>
     )
