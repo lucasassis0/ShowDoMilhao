@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Text, View, } from 'react-native'
-import {Button  } from 'react-native-elements'
+import { Button, Overlay } from 'react-native-elements'
 import Perguntas from '../components/monstraPerguntas'
 import Alternativas from '../components/alternativas'
 import Posicao from '../components/posicao'
+import { Alert } from 'react-native'
 
 const perguntas = require('../db/questions.json')
 const PaginaJogo = ({ navigation }) => {
@@ -12,6 +13,11 @@ const PaginaJogo = ({ navigation }) => {
     const [indicePergunta, geraNovaPergunta] = useState(0)
     const [pulo, setPulo] = useState(0)
     const [buttonPulo, setButtonPulo] = useState(false)
+    const [visible, setVisible] = useState(false)
+    
+    const toggleOverlay = () => {
+    setVisible(!visible);
+    }
     const geraIndices = (perguntasRespondidas) => {
         let num = Math.floor(Math.random() * 50)
         if (perguntasRespondidas[num]) {
@@ -35,12 +41,12 @@ const PaginaJogo = ({ navigation }) => {
     }
 
     const pular = () => {
-        if(pulo < 3) {
+        if (pulo < 3) {
             setPulo(pulo + 1)
-            if(pulo == 2){
+            if (pulo == 2) {
                 setButtonPulo(true)
             }
-        }else{
+        } else {
             console.log('voce pulou 3 vezes')
         }
     }
@@ -51,13 +57,13 @@ const PaginaJogo = ({ navigation }) => {
             navigation.navigate('Parou')
         } else if (acertou) {
             geraNovaPergunta(indicePergunta + 1)
+
         } else {
             reiniciaJogo()
             navigation.navigate('Parou')
         }
 
     }
-
 
     return (
         <View style={styles.container}>
