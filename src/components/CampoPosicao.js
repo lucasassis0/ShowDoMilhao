@@ -22,10 +22,10 @@ const styles = {
         justifyContent: 'space-around',
     },
     styleButton: {
-        borderColor: '#ffdd55',
+        borderColor: '#EBCD06',
         height: 40,
         width: 350,
-        backgroundColor: '#124e78',
+        backgroundColor: '#172178',
         borderWidth: 2,
         margin: 20,
         borderRadius: 11,

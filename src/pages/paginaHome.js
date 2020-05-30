@@ -1,10 +1,11 @@
 import React from 'react'
-import { Text, View, Image } from 'react-native'
+import { Text, View, Image, StatusBar} from 'react-native'
 import Botao from '../components/Botao'
 
 const PaginaHome = ({ navigation }) => {
     return (
         <View style={styles.container} >
+            <StatusBar backgroundColor={'#172178'}/>
             <Image
                 source={require('../images/logo.png')}
                 style={styles.logo}
@@ -21,7 +22,7 @@ const styles = {
     container: {
         alignItems: 'center',
         flex: 1,
-        backgroundColor: '#03045e',
+        backgroundColor: '#172178',
     },
     containerButton: {
         flex: 2,

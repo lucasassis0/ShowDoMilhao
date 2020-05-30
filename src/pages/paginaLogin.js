@@ -1,11 +1,12 @@
 import 'react-native-gesture-handler'
 import React from 'react'
-import { Text, View, Button, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native'
+import { Text, View, Button, StyleSheet, Image, TextInput, TouchableOpacity, StatusBar } from 'react-native'
 import logo from '../images/logo.png'
 
 const PaginaLogin = ({ navigation }) => {
     return (
         <View style={styles.container}>
+            <StatusBar backgroundColor={'#172178'}/>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} >
                 <Image style={styles.logo} source={logo} />
             </View>

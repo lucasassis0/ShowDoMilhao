@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, View, } from 'react-native'
+import { Text, View, StatusBar } from 'react-native'
 import { Button, Overlay } from 'react-native-elements'
 import Perguntas from '../components/monstraPerguntas'
 import Alternativas from '../components/alternativas'
@@ -15,9 +15,9 @@ const PaginaJogo = ({ navigation }) => {
     const [buttonPulo, setButtonPulo] = useState(false)
     const [visible, setVisible] = useState(false)
     const [premio, setPremio] = useState([])
-    
+
     const toggleOverlay = () => {
-    setVisible(!visible);
+        setVisible(!visible);
     }
     const geraIndices = (perguntasRespondidas) => {
         let num = Math.floor(Math.random() * 50)
@@ -42,7 +42,8 @@ const PaginaJogo = ({ navigation }) => {
     }
 
     const parar = () => {
-        navigation.navigate('Parou', {data:{ indicePremio: indicePergunta, resposta: 'PAROU' }})
+        reiniciaJogo()
+        navigation.navigate('Parou', { data: { indicePremio: indicePergunta, resposta: 'PAROU' } })
     }
 
     const pular = () => {
@@ -60,21 +61,22 @@ const PaginaJogo = ({ navigation }) => {
     const notificaResposta = (acertou) => {
         if (indicePergunta > 15) {
             reiniciaJogo()
-            navigation.navigate('Parou',{data:{ indicePremio: indicePergunta, resposta: acertou}})
+            navigation.navigate('Parou', { data: { indicePremio: indicePergunta, resposta: acertou } })
         } else if (acertou) {
             geraNovaPergunta(indicePergunta + 1)
         } else {
             reiniciaJogo()
-            navigation.navigate('Parou',{data:{ indicePremio: indicePergunta, resposta: acertou}})
+            navigation.navigate('Parou', { data: { indicePremio: indicePergunta, resposta: acertou } })
         }
 
     }
 
     return (
         <View style={styles.container}>
+            <StatusBar backgroundColor={'#172178'}/>
             <Perguntas pergunta={pergunta} />
             <Alternativas alternativas={alternativa} correta={correta} notificaResposta={notificaResposta} />
-            <Posicao indice={indicePergunta} notificaResposta={notificaResposta}/>
+            <Posicao indice={indicePergunta} notificaResposta={notificaResposta} />
             <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', }}>
                 <Button title='Pular' onPress={pular} disabled={buttonPulo} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
                 <Button title='Parar' onPress={parar} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />

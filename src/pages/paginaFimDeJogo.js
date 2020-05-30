@@ -1,14 +1,16 @@
 import 'react-native-gesture-handler'
 import React from 'react'
-import { Text, View, StyleSheet, Image, SafeAreaView, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, Image, SafeAreaView, TouchableOpacity, StatusBar } from 'react-native'
 import logo from '../images/logo.png'
 import resultado from '../components/resultado'
 
 const PaginaFimDeJogo = ({ navigation, route }) => {
-    const { indicePremio, resposta } = route.params.data
+    const { indicePremio, resposta, reiniciar } = route.params.data
+    console.log('reiniciar: ', reiniciar);
 
     return (
         <SafeAreaView style={styles.container}>
+            <StatusBar backgroundColor={'#172178'}/>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Image source={logo}
                     style={styles.logo} />

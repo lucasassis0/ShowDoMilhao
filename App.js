@@ -19,7 +19,7 @@ const Stack = createStackNavigator()
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Inicio" screenOptions={header}> 
+      <Stack.Navigator initialRouteName="Inicio" screenOptions={{headerShown: false }}> 
         <Stack.Screen name="Inicio" component={Inicio}/>
         <Stack.Screen name="PaginaHome" component={PaginaHome} />
         <Stack.Screen name="PaginaLogin" component={PaginaLogin} />
