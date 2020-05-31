@@ -5,6 +5,8 @@ import Perguntas from '../components/monstraPerguntas'
 import Alternativas from '../components/alternativas'
 import Posicao from '../components/posicao'
 import { Alert } from 'react-native'
+import { geraDificiculdade } from '../components/geraIndicePerguntas'
+
 
 const perguntas = require('../db/questions.json')
 const PaginaJogo = ({ navigation }) => {
@@ -13,23 +15,8 @@ const PaginaJogo = ({ navigation }) => {
     const [indicePergunta, geraNovaPergunta] = useState(0)
     const [pulo, setPulo] = useState(0)
     const [buttonPulo, setButtonPulo] = useState(false)
-    const [visible, setVisible] = useState(false)
-    const [premio, setPremio] = useState([])
 
-    const toggleOverlay = () => {
-        setVisible(!visible);
-    }
-    const geraIndices = (perguntasRespondidas) => {
-        let num = Math.floor(Math.random() * 50)
-        if (perguntasRespondidas[num]) {
-            return geraIndices(perguntasRespondidas)
-        } else {
-            perguntasRespondidas[num] = num
-            return num
-        }
-    }
-
-    const numero = geraIndices(perguntasRespondidas)
+    const numero = geraDificiculdade(perguntasRespondidas, indicePergunta)
     const pergunta = perguntas[numero]
     const alternativa = pergunta.Answers
     const correta = pergunta.CorrectAnswer
@@ -53,8 +40,6 @@ const PaginaJogo = ({ navigation }) => {
             if (pulo == 2) {
                 setButtonPulo(true)
             }
-        } else {
-            console.log('voce pulou 3 vezes')
         }
     }
 
@@ -73,7 +58,7 @@ const PaginaJogo = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor={'#172178'}/>
+            <StatusBar backgroundColor={'#172178'} />
             <Perguntas pergunta={pergunta} />
             <Alternativas alternativas={alternativa} correta={correta} notificaResposta={notificaResposta} />
             <Posicao indice={indicePergunta} notificaResposta={notificaResposta} />
