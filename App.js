@@ -19,15 +19,15 @@ const Stack = createStackNavigator()
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Inicio" screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName="Inicio" screenOptions={{ headerShown: false, transitionSpec: { open: config, close: config  }}} >
         <Stack.Screen name="Inicio" component={Inicio}  />
-        <Stack.Screen name="PaginaHome" component={PaginaHome} options={{ transitionSpec: { open: config, close: config }}} />
-        <Stack.Screen name="PaginaLogin" component={PaginaLogin} options={{ transitionSpec: { open: config, close: config }}} />
-        <Stack.Screen name="PaginaJogo" component={PaginaJogo} options={{ transitionSpec: { open: config, close: config }}} />
+        <Stack.Screen name="PaginaHome" component={PaginaHome} />
+        <Stack.Screen name="PaginaLogin" component={PaginaLogin} />
+        <Stack.Screen name="PaginaJogo" component={PaginaJogo} />
         <Stack.Screen name="PaginaPerfil" component={PaginaPerfil} />
         <Stack.Screen name="PaginaCadastraJodador" component={PaginaCadastraJogador} />
         <Stack.Screen name="PaginaRanking" component={PaginaRanking} />
-        <Stack.Screen name="Parou" component={PaginaFimDeJogo} options={{ transitionSpec: { open: config, close: config }}} />
+        <Stack.Screen name="Parou" component={PaginaFimDeJogo} />
         <Stack.Screen name="Derrota" component={PaginaDerrota} />
       </Stack.Navigator>
     </NavigationContainer>
