@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Text, View, StatusBar } from 'react-native'
-import { Button, Overlay } from 'react-native-elements'
+import { View, StatusBar } from 'react-native'
 import Perguntas from '../components/monstraPerguntas'
 import Alternativas from '../components/alternativas'
 import Posicao from '../components/posicao'
@@ -14,6 +13,7 @@ const PaginaJogo = ({ navigation }) => {
     const [perguntasRespondidas, setPerguntasRespondidas] = useState({})
     const [indicePergunta, geraNovaPergunta] = useState(0)
     const [pulo, setPulo] = useState(0)
+    const [buttonPulo, setButtonPulo] = useState(false)
 
     const numero = geraDificiculdade(perguntasRespondidas, indicePergunta)
     console.log('numero: ', numero);
@@ -21,16 +21,22 @@ const PaginaJogo = ({ navigation }) => {
     const alternativa = pergunta.Answers
     const correta = pergunta.CorrectAnswer
 
+
     const reiniciaJogo = () => {
         console.log('reinica')
         setPerguntasRespondidas({})
         geraNovaPergunta(0)
         setPulo(0)
+        setButtonPulo(false)
     }
     
 
     const notificaResposta = (acertou) => {
-        if (indicePergunta > 15) {
+        console.log('indicePergunta: ', indicePergunta);
+        if(indicePergunta === 14){
+            setButtonPulo(true)
+        }
+        if (indicePergunta > 14) {
             reiniciaJogo()
             navigation.navigate('Parou', { data: { indicePremio: indicePergunta, resposta: acertou } })
         } else if (acertou) {
@@ -47,7 +53,7 @@ const PaginaJogo = ({ navigation }) => {
             <Perguntas pergunta={pergunta} />
             <Alternativas alternativas={alternativa} correta={correta} notificaResposta={notificaResposta} />
             <Posicao indice={indicePergunta} notificaResposta={notificaResposta} />
-            <Botoes setPulo={setPulo} pulo={pulo} reiniciaJogo={reiniciaJogo} navigation={navigation} indicePergunta={indicePergunta} />
+            <Botoes  buttonPulo={buttonPulo} setButtonPulo={setButtonPulo} setPulo={setPulo} pulo={pulo} reiniciaJogo={reiniciaJogo} navigation={navigation} indicePergunta={indicePergunta} />
         </View>
     )
 }

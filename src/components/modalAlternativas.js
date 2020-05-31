@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Text, View, TouchableOpacity, Alert, Modal } from 'react-native'
+import React from 'react'
+import { Text, View, TouchableOpacity, Modal } from 'react-native'
 
 const ModalAlternativas = ({ notificaResposta, visible, respostaEscolhida, respostaCerta, setModalVisible }) => {
     return (

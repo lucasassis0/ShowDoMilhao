@@ -2,12 +2,9 @@ import React, { useState } from 'react'
 import { Text, View, Modal, TouchableOpacity } from 'react-native'
 import { Button, Overlay } from 'react-native-elements'
 
-const Botoes = ({ pulo, setPulo, reiniciaJogo, navigation, indicePergunta }) => {
+const Botoes = ({ pulo, setPulo, reiniciaJogo, navigation, indicePergunta, buttonPulo, setButtonPulo }) => {
     const premio = [1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 200000, 300000, 400000, 500000, 1000000]
     const parar = premio[indicePergunta] / 2
-
-    const [buttonPulo, setButtonPulo] = useState(false)
-    // const [pulo, setPulo] = useState(0)
     const [modalVisible, setModalVisible] = useState(false);
 
     const onPressParar = () => {
@@ -29,11 +26,10 @@ const Botoes = ({ pulo, setPulo, reiniciaJogo, navigation, indicePergunta }) => 
         }
     }
 
-
     return (
         <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', paddingVertical: 20 }}>
-            <Button title='Pular' onPress={pular} disabled={buttonPulo} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000', borderRadius: 15 }} />
-            <Button title='Parar' onPress={onPressParar} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000', borderRadius: 15}} />
+            <Button title={`PULAR ${pulo}/3`} onPress={pular} disabled={buttonPulo} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000', borderRadius: 15 }} />
+            <Button title='PARAR' onPress={onPressParar} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000', borderRadius: 15}} />
             <Modal
                 animationType="fade"
                 transparent={true}

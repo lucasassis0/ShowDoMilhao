@@ -11,7 +11,11 @@ function resultado(res, indice) {
         case true:
             return vitoria('1 Milhão')
         case false:
-            return derrota(errar)
+            if (premio[indice] === 1000) {
+                return derrota(0)
+            }else{
+                return derrota(errar)
+            }
         case 'PAROU':
             if (premio[indice] === 1000) {
                 return parou(0)

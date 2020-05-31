@@ -1,5 +1,5 @@
 export const geraIndicesFacil = (perguntasRespondidas) => {
-    let num = Math.floor(Math.random() * (51 - 0)) + 0
+    let num = Math.floor(Math.random() * (50 - 0)) + 0
     if (perguntasRespondidas[num]) {
         return geraIndicesFacil(perguntasRespondidas)
     } else {
@@ -8,7 +8,7 @@ export const geraIndicesFacil = (perguntasRespondidas) => {
     }
 }
 export const geraIndicesIntermediario = (perguntasRespondidas) => {
-    let num = Math.floor(Math.random() * (91 - 51)) + 51
+    let num = Math.floor(Math.random() * (90 - 51)) + 51
     if (perguntasRespondidas[num]) {
         return geraIndicesIntermediario(perguntasRespondidas)
     } else {
@@ -17,7 +17,7 @@ export const geraIndicesIntermediario = (perguntasRespondidas) => {
     }
 }
 export const geraIndicesDificil = (perguntasRespondidas) => {
-    let num = Math.floor(Math.random() * (131 - 91)) + 91
+    let num = Math.floor(Math.random() * (130 - 91)) + 91
     if (perguntasRespondidas[num]) {
         return geraIndicesDificil(perguntasRespondidas)
     } else {
