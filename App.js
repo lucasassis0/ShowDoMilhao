@@ -19,18 +19,29 @@ const Stack = createStackNavigator()
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Inicio" screenOptions={{headerShown: false }}> 
-        <Stack.Screen name="Inicio" component={Inicio}/>
-        <Stack.Screen name="PaginaHome" component={PaginaHome} />
-        <Stack.Screen name="PaginaLogin" component={PaginaLogin} />
-        <Stack.Screen name="PaginaJogo" component={PaginaJogo} />
+      <Stack.Navigator initialRouteName="Inicio" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Inicio" component={Inicio}  />
+        <Stack.Screen name="PaginaHome" component={PaginaHome} options={{ transitionSpec: { open: config, close: config }}} />
+        <Stack.Screen name="PaginaLogin" component={PaginaLogin} options={{ transitionSpec: { open: config, close: config }}} />
+        <Stack.Screen name="PaginaJogo" component={PaginaJogo} options={{ transitionSpec: { open: config, close: config }}} />
         <Stack.Screen name="PaginaPerfil" component={PaginaPerfil} />
         <Stack.Screen name="PaginaCadastraJodador" component={PaginaCadastraJogador} />
         <Stack.Screen name="PaginaRanking" component={PaginaRanking} />
-        <Stack.Screen name="Parou" component={PaginaFimDeJogo} />
+        <Stack.Screen name="Parou" component={PaginaFimDeJogo} options={{ transitionSpec: { open: config, close: config }}} />
         <Stack.Screen name="Derrota" component={PaginaDerrota} />
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
+const config = {
+  animation: 'spring',
+  config: {
+    stiffness: 300,
+    damping: 500,
+    mass: 3,
+    overshootClamping: true,
+    restDisplacementThreshold: 0.01,
+    restSpeedThreshold: 0.01,
+  },
+};
 export default App
