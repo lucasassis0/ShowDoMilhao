@@ -4,8 +4,8 @@ import { Button, Overlay } from 'react-native-elements'
 import Perguntas from '../components/monstraPerguntas'
 import Alternativas from '../components/alternativas'
 import Posicao from '../components/posicao'
-import { Alert } from 'react-native'
 import { geraDificiculdade } from '../components/geraIndicePerguntas'
+import Botoes from '../components/botoesJogo'
 
 
 const perguntas = require('../db/questions.json')
@@ -14,34 +14,20 @@ const PaginaJogo = ({ navigation }) => {
     const [perguntasRespondidas, setPerguntasRespondidas] = useState({})
     const [indicePergunta, geraNovaPergunta] = useState(0)
     const [pulo, setPulo] = useState(0)
-    const [buttonPulo, setButtonPulo] = useState(false)
 
     const numero = geraDificiculdade(perguntasRespondidas, indicePergunta)
+    console.log('numero: ', numero);
     const pergunta = perguntas[numero]
     const alternativa = pergunta.Answers
     const correta = pergunta.CorrectAnswer
 
     const reiniciaJogo = () => {
+        console.log('reinica')
         setPerguntasRespondidas({})
         geraNovaPergunta(0)
         setPulo(0)
-        setButtonPulo(false)
     }
-
-    const parar = () => {
-        reiniciaJogo()
-        navigation.navigate('Parou', { data: { indicePremio: indicePergunta, resposta: 'PAROU' } })
-    }
-
-    const pular = () => {
-        if (pulo < 3) {
-            setPulo(pulo + 1)
-            Alert.alert('voce pulou')
-            if (pulo == 2) {
-                setButtonPulo(true)
-            }
-        }
-    }
+    
 
     const notificaResposta = (acertou) => {
         if (indicePergunta > 15) {
@@ -53,7 +39,6 @@ const PaginaJogo = ({ navigation }) => {
             reiniciaJogo()
             navigation.navigate('Parou', { data: { indicePremio: indicePergunta, resposta: acertou } })
         }
-
     }
 
     return (
@@ -62,10 +47,7 @@ const PaginaJogo = ({ navigation }) => {
             <Perguntas pergunta={pergunta} />
             <Alternativas alternativas={alternativa} correta={correta} notificaResposta={notificaResposta} />
             <Posicao indice={indicePergunta} notificaResposta={notificaResposta} />
-            <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', }}>
-                <Button title='Pular' onPress={pular} disabled={buttonPulo} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
-                <Button title='Parar' onPress={parar} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
-            </View>
+            <Botoes setPulo={setPulo} pulo={pulo} reiniciaJogo={reiniciaJogo} navigation={navigation} indicePergunta={indicePergunta} />
         </View>
     )
 }

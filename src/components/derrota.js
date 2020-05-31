@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 function derrota(premio) {
     return (
         <View>
-            <Text style={styles.texto}> Você decidiu parar! {'\n'} Sua premiação foi: {'\n'} {premio}</Text>
+            <Text style={styles.texto}> Você errou ! {'\n'} Sua premiação foi: {'\n'} {premio}</Text>
         </View>
     )
 }

@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { Text, View, TouchableOpacity, Alert, Modal } from 'react-native'
-import { Overlay, Button } from 'react-native-elements'
 import ModalAlternativas from './modalAlternativas'
 const Alternativas = ({ alternativas, correta, notificaResposta }) => {
-
 
     const respostaCerta = alternativas[correta]
     const [modalVisible, setModalVisible] = useState(false);
@@ -49,34 +47,6 @@ const styles = {
         flex: 1,
         justifyContent: 'space-around',
     },
-    openButton: {
-        backgroundColor: "blue",
-        borderRadius: 20,
-        padding: 15,
-        elevation: 15,
-        marginTop: 10
-    },
-    centeredView: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 22
-    },
-    modalView: {
-        margin: 20,
-        backgroundColor: "white",
-        borderRadius: 20,
-        padding: 35,
-        alignItems: "center",
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5
-    },
     alternativas: {
         flex: 1,
         marginTop: 15,
@@ -113,25 +83,4 @@ const styles = {
     },
 }
 
-// const verificarRespota = () => {
-//     const respostaCerta = alternativas[correta]
-// }
-
-// {/* <Overlay isVisible={true} onBackdropPress={toggleOverlay}>
-// <Text style={{ height: 50, lineHeight: 50 }}>Voce está certo disso ? {respostaCerta}</Text>
-// <Button title='Confirmar resposta !' onPress={() => { }} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
-// </Overlay> */}
-
-// const RespostaErrada = () => {
-//     return (
-//     )
-// const toggleOverlay = () => {
-//     setVisible(!visible);
-// // }
-// const [visible, setVisible] = useState(false)
-//         <Overlay isVisible={true} onBackdropPress={toggleOverlay}>
-//             <Text style={{ height: 50, lineHeight: 50 }}>Voce está certo disso ? {respostaCerta}</Text>
-//             <Button title='Confirmar resposta !' onPress={() => { }} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000' }} />
-//         </Overlay>
-// }
 export default Alternativas
