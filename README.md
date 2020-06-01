@@ -38,7 +38,7 @@ Execute a aplicação:
 npm start
 ```
 
-OBS: Se a aplicação iniciar com o Expo, escolha entre as opções, se quer rodar em Android, IOS (Ler QR Code) ou browser.
+OBS: Se a aplicação iniciar com o Expo, escolha entre as opções: rodar em Android, IOS (Ler QR Code) ou browser.
 <br/><br/>
 
 <h3>Status do Projeto:</h3>
