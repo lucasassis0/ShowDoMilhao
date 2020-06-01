@@ -27,7 +27,7 @@ function Inicio({navigation}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#03045e'
+        backgroundColor: '#172178'
     },
     logoView: {
         justifyContent: 'center',

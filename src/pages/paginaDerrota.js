@@ -1,11 +1,11 @@
 import 'react-native-gesture-handler'
 import React from 'react'
-import { Text, View, StyleSheet, Image, SafeAreaView, TouchableOpacity, StatusBar } from 'react-native'
+import { Text, View, StyleSheet, Image, TouchableOpacity, StatusBar } from 'react-native'
 import logo from '../images/logo.png'
 
 const PaginaDerrota = ({ navigation }) => {
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <StatusBar backgroundColor={'#172178'}/>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Image source={logo}
@@ -25,7 +25,7 @@ const PaginaDerrota = ({ navigation }) => {
                     <Text style={styles.buttonText}>Menu</Text>
                 </TouchableOpacity>
             </View>
-        </SafeAreaView>
+        </View>
     )
 }
 export default PaginaDerrota
@@ -44,10 +44,10 @@ const styles = StyleSheet.create({
     caixaDeTexto: {
         flex: 2,
         width: '75%',
-        backgroundColor: '#b71b1b',
+        backgroundColor: '#9a031e',
         borderRadius: 40,
-        borderColor: 'gold',
-        borderWidth: 1,
+        borderColor: '#ffdd55',
+        borderWidth: 2,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -61,19 +61,19 @@ const styles = StyleSheet.create({
     texto: {
         // flex: 1,
         textAlign: 'center',
-        color: '#EBCD06',
-        fontSize: 25,
+        color: '#ffffff',
+        fontSize: 22,
         justifyContent: 'center',
         alignItems: 'center'
     },
     button: {
         justifyContent: 'space-evenly',
         alignSelf: 'center',
-        backgroundColor: '#b71b1b',
+        backgroundColor: '#9a031e',
         width: 150,
         height: 50,
         shadowColor: "#000",
-        borderColor: 'gold',
+        borderColor: '#ffdd55',
         borderWidth: 1,
         marginHorizontal: 10,
         shadowOffset: {
@@ -88,6 +88,6 @@ const styles = StyleSheet.create({
     buttonText: {
         textAlign: "center",
         fontSize: 18,
-        color: '#EBCD06',
+        color: '#ffffff',
     }
 })

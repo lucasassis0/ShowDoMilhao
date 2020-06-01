@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     texto: {
         // flex: 1,
         textAlign: 'center',
-        color: '#EBCD06',
+        color: '#ffffff',
         fontSize: 25,
         justifyContent: 'center',
         alignItems: 'center'

@@ -12,7 +12,7 @@ const PaginaHome = ({ navigation }) => {
             />
             <View style={styles.containerButton}>
                 <Botao title={'Jogar'} onPress={() => { navigation.navigate('PaginaJogo') }} />
-                <Botao title={'Ranking'} onPress={() => { navigation.navigate('PaginaRanking') }} />
+                <Botao title={'Minha Pontuação'} onPress={() => { navigation.navigate('PaginaRanking') }} />
             </View>
 
         </View>
@@ -28,7 +28,7 @@ const styles = {
         flex: 2,
     },
     logo: {
-        margin: 10,
+        margin: 60,
         flex: 1,
         width: 400,
     },

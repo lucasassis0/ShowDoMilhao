@@ -1,24 +1,20 @@
 import 'react-native-gesture-handler'
 import React from 'react'
-import { Text, View, StyleSheet, Image, SafeAreaView, TouchableOpacity, StatusBar } from 'react-native'
+import { Text, View, StyleSheet, Image,  TouchableOpacity, StatusBar } from 'react-native'
 import logo from '../images/logo.png'
 import resultado from '../components/resultado'
-
-<<<<<<< HEAD
 
 
 const PaginaFimDeJogo = ({ navigation, route }) => {
     const res = 'vitoria'
     const premio = '1 Milhão!'
-=======
-const PaginaFimDeJogo = ({ navigation, route }) => {
     const { indicePremio, resposta, reiniciar } = route.params.data
     console.log('reiniciar: ', reiniciar);
->>>>>>> 800b1c4b36394e70f9f8e9cdd104f9a4c87efeb6
+
 
     return (
-        <SafeAreaView style={styles.container}>
-            <StatusBar backgroundColor={'#172178'}/>
+        <View style={styles.container}>
+            <StatusBar backgroundColor={'#172178'} />
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Image source={logo}
                     style={styles.logo} />
@@ -36,7 +32,7 @@ const PaginaFimDeJogo = ({ navigation, route }) => {
                     <Text style={styles.buttonText}>Menu</Text>
                 </TouchableOpacity>
             </View>
-        </SafeAreaView>
+        </View>
     )
 }
 
@@ -55,10 +51,10 @@ const styles = StyleSheet.create({
     caixaDeTexto: {
         flex: 2,
         width: '75%',
-        backgroundColor: '#b71b1b',
+        backgroundColor: '#9a031e',
         borderRadius: 40,
-        borderColor: 'gold',
-        borderWidth: 1,
+        borderColor: '#ffdd55',
+        borderWidth: 2,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -72,12 +68,12 @@ const styles = StyleSheet.create({
     button: {
         justifyContent: 'space-evenly',
         alignSelf: 'center',
-        backgroundColor: '#b71b1b',
+        backgroundColor: '#9a031e',
         width: 150,
         height: 50,
         shadowColor: "#000",
-        borderColor: 'gold',
-        borderWidth: 1,
+        borderColor: '#ffdd55',
+        borderWidth: 2,
         marginHorizontal: 10,
         shadowOffset: {
             width: 0,
@@ -90,8 +86,8 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         textAlign: "center",
-        fontSize: 18,
-        color: '#EBCD06',
+        fontSize: 19,
+        color: '#ffffff',
     }
 })
 export default PaginaFimDeJogo;

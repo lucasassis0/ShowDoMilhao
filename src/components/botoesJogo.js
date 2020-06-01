@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Text, View, Modal, TouchableOpacity } from 'react-native'
 import { Button, Overlay } from 'react-native-elements'
+import BotaoPararPular from './botaoPularParar';
 
 const Botoes = ({ pulo, setPulo, reiniciaJogo, navigation, indicePergunta, buttonPulo, setButtonPulo }) => {
     const premio = [1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 200000, 300000, 400000, 500000, 1000000]
@@ -28,8 +29,8 @@ const Botoes = ({ pulo, setPulo, reiniciaJogo, navigation, indicePergunta, butto
 
     return (
         <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', paddingVertical: 20 }}>
-            <Button title={`PULAR ${pulo}/3`} onPress={pular} disabled={buttonPulo} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000', borderRadius: 15 }} />
-            <Button title='PARAR' onPress={onPressParar} titleStyle={{ color: '#FAFF00' }} type='outline' containerStyle={{ backgroundColor: "#B71B1B" }} buttonStyle={{ borderColor: '#000', borderRadius: 15}} />
+            <BotaoPararPular title={`PULAR ${pulo}/3`} onPress={pular} disabled={buttonPulo}  type='outline'  />
+            <BotaoPararPular title='PARAR' onPress={onPressParar} type='outline' />
             <Modal
                 animationType="fade"
                 transparent={true}
@@ -37,16 +38,16 @@ const Botoes = ({ pulo, setPulo, reiniciaJogo, navigation, indicePergunta, butto
             >
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
-                        <Text style={{fontSize: 22}}>Quer mesmo parar o jogo ?</Text>
-                        <Text style={{fontSize: 22}}>Voce vai ficar com: R${premio[indicePergunta] == 1000 ? 0 : parar} </Text>
+                        <Text style={{fontSize: 22, color:'#9a031e'}}>Quer mesmo parar o jogo ?</Text>
+                        <Text style={{fontSize: 22, color:'#9a031e'}}>Voce vai ficar com: R${premio[indicePergunta] == 1000 ? 0 : parar} </Text>
                         <View style={{ flexDirection: "row" }}>
                             <TouchableOpacity style={styles.openButton} onPress={() => setModalVisible(!modalVisible)}>
-                                <Text style={{ fontSize: 15, color: 'yellow', fontWeight: "bold" }}>Cancelar</Text>
+                                <Text style={{ fontSize: 15, color: '#ffdd55', fontWeight: "bold" }}>Cancelar</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={[styles.openButton, { ...styles, marginLeft: 10 }]}
                                 onPress={() => { setModalVisible(!modalVisible), parou()
                                 }} >
-                                <Text style={{ fontSize: 15, color: 'yellow', fontWeight: "bold" }}>Confirmar</Text>
+                                <Text style={{ fontSize: 15, color: '#ffdd55', fontWeight: "bold" }}>Confirmar</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -58,7 +59,7 @@ const Botoes = ({ pulo, setPulo, reiniciaJogo, navigation, indicePergunta, butto
 const styles = {
 
     openButton: {
-        backgroundColor: "blue",
+        backgroundColor: "#172178",
         borderRadius: 20,
         padding: 15,
         elevation: 15,
@@ -72,7 +73,7 @@ const styles = {
     },
     modalView: {
         margin: 20,
-        backgroundColor: "white",
+        backgroundColor: "#ffffff",
         borderRadius: 20,
         padding: 35,
         alignItems: "center",
