@@ -2,14 +2,26 @@ import vitoria from './vitoria'
 import derrota from './derrota'
 import parou from './parou'
 
-function resultado(res, premio) {
+function resultado(res, indice) {
+    const premio = [1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 200000, 300000, 400000, 500000, 1000000]
+    const parar = premio[indice] / 2
+    const errar = parar / 2
+    
     switch (res) {
-        case 'vitoria':
-            return vitoria(premio)
-        case 'derrota':
-            return derrota(premio)
-        case 'parou':
-            return parou(premio)
+        case true:
+            return vitoria('1 Milhão')
+        case false:
+            if (premio[indice] === 1000) {
+                return derrota(0)
+            }else{
+                return derrota(errar)
+            }
+        case 'PAROU':
+            if (premio[indice] === 1000) {
+                return parou(0)
+            }else{
+                return parou(parar)
+            }
         default:
             break;
     }
