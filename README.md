@@ -38,12 +38,12 @@ Execute a aplicação:
 npm start
 ```
 
-OBS: Se a aplicação iniciar com o Expo, escolha entre as opções se quer rodar em Android, IOS (Ler QR Code) ou browser.
+OBS: Se a aplicação iniciar com o Expo, escolha entre as opções, se quer rodar em Android, IOS (Ler QR Code) ou browser.
 <br/><br/>
 
 <h3>Status do Projeto:</h3>
 Em desenvolvimento :warning: <br/>
-Essa versão é apenas um VPN do projeto.
+Essa versão é um VPN do projeto.
 <br/><br/>
 
 <h3>Linguagens, dependencias e libs utilizadas: :books:</h3>
@@ -52,7 +52,7 @@ Essa versão é apenas um VPN do projeto.
 <b>Babel</b>: https://babeljs.io/docs/en/
 <br/>
 
-<p>Projeto desenvolvido em grupo, no curso de Front-End Mobile - Arbyte</p>
+<p>Projeto desenvolvido em grupo, no curso de Front-End Mobile da Arbyte</p>
 <br/>
 
 <h3>Desenvolvedores:</h3>
