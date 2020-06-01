@@ -29,8 +29,8 @@ const Botoes = ({ pulo, setPulo, reiniciaJogo, navigation, indicePergunta, butto
 
     return (
         <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', paddingVertical: 20 }}>
-            <BotaoPararPular title={`PULAR ${pulo}/3`} onPress={pular} disabled={buttonPulo}  type='outline'  />
-            <BotaoPararPular title='PARAR' onPress={onPressParar} type='outline' />
+            <Button title={`PULAR ${pulo}/3`} onPress={pular} disabled={buttonPulo}  type='outline' buttonStyle={styles.styleButton} titleStyle={styles.buttonText}/>
+            <Button title='PARAR' onPress={onPressParar} type='outline' buttonStyle={styles.styleButton} titleStyle={styles.buttonText} />
             <Modal
                 animationType="fade"
                 transparent={true}
@@ -57,7 +57,29 @@ const Botoes = ({ pulo, setPulo, reiniciaJogo, navigation, indicePergunta, butto
     )
 }
 const styles = {
-
+    styleButton: {
+        borderColor: '#ffdd55',
+        height: 40,
+        width: 180,
+        backgroundColor: '#9a031e',
+        borderWidth: 2,
+        margin: 20,
+        borderRadius: 11,
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowOffset: {
+            width: 0,
+            height: 6,
+        },
+        shadowOpacity: 0.37,
+        shadowRadius: 7.49,
+        elevation: 12,
+    },
+    buttonText: {
+        textAlign: "center",
+        fontSize: 20,
+        color: '#ffffff',
+    },
     openButton: {
         backgroundColor: "#172178",
         borderRadius: 20,

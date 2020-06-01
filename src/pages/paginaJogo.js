@@ -4,6 +4,7 @@ import Perguntas from '../components/monstraPerguntas'
 import Alternativas from '../components/alternativas'
 import Posicao from '../components/posicao'
 import { geraDificiculdade } from '../components/geraIndicePerguntas'
+// import Botoes from '../components/botoesJogo'
 import Botoes from '../components/botoesJogo'
 
 

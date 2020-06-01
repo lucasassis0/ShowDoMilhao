@@ -2,12 +2,12 @@ import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 
 
-const BotaoPararPular = (props) => {
+const BotaoPararPular = ({onPress, title}) => {
     return (
         <TouchableOpacity style={styles.styleButton}
-            onPress={props.onPress}
+            onPress={onPress}
         >
-            <Text style={styles.buttonText}>{props.title}</Text>
+            <Text style={styles.buttonText}>{title}</Text>
         </TouchableOpacity>
 
     );
