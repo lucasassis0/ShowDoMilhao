@@ -4,9 +4,17 @@ import { Text, View, StyleSheet, Image, SafeAreaView, TouchableOpacity, StatusBa
 import logo from '../images/logo.png'
 import resultado from '../components/resultado'
 
+<<<<<<< HEAD
+
+
+const PaginaFimDeJogo = ({ navigation, route }) => {
+    const res = 'vitoria'
+    const premio = '1 Milhão!'
+=======
 const PaginaFimDeJogo = ({ navigation, route }) => {
     const { indicePremio, resposta, reiniciar } = route.params.data
     console.log('reiniciar: ', reiniciar);
+>>>>>>> 800b1c4b36394e70f9f8e9cdd104f9a4c87efeb6
 
     return (
         <SafeAreaView style={styles.container}>
@@ -31,7 +39,7 @@ const PaginaFimDeJogo = ({ navigation, route }) => {
         </SafeAreaView>
     )
 }
-export default PaginaFimDeJogo
+
 
 const styles = StyleSheet.create({
     container: {
@@ -86,3 +94,4 @@ const styles = StyleSheet.create({
         color: '#EBCD06',
     }
 })
+export default PaginaFimDeJogo;

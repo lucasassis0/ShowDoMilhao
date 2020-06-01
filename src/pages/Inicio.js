@@ -27,7 +27,7 @@ function Inicio({navigation}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#172178'
+        backgroundColor: '#03045e'
     },
     logoView: {
         justifyContent: 'center',
@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
     },
     button: {
         justifyContent: 'center',
-        backgroundColor: '#b71b1b',
+        backgroundColor: '#9a031e',
         width: 150,
         height: 65,
         shadowColor: "#000",
-        borderWidth: 1,
-        borderColor: 'gold',
+        borderWidth: 2,
+        borderColor: '#ffdd55',
         shadowOffset: {
             width: 0,
             height: 6,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     buttonText: {
         textAlign: "center",
         fontSize: 24,
-        color: '#EBCD06',
+        color: '#ffffff',
     }
 })
 

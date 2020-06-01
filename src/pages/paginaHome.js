@@ -11,8 +11,8 @@ const PaginaHome = ({ navigation }) => {
                 style={styles.logo}
             />
             <View style={styles.containerButton}>
-                <Botao title={'Jogar'} onPress={() => { navigation.navigate('PaginaJogo')}} />
-                <Botao title={'Ranking'} onPress={() => { navigation.navigate('PaginaRanking')}}/>
+                <Botao title={'Jogar'} onPress={() => { navigation.navigate('PaginaJogo') }} />
+                <Botao title={'Ranking'} onPress={() => { navigation.navigate('PaginaRanking') }} />
             </View>
 
         </View>
