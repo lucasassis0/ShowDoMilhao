@@ -56,30 +56,28 @@ const styles = {
     alternativasTexto: {
         lineHeight: 30,
         borderRadius: 20,
-        borderBottomColor: "#bbb",
         fontSize: 16,
-        backgroundColor: '#B71B1B',
-        color: '#FAFF00',
+        backgroundColor: '#9a031e',
+        color: '#ffffff',
         marginLeft: 15,
         borderWidth: 2,
-        borderColor: '#f6aa1c',
         flex: 7,
         textAlign: 'center',
-        height: 35
+        height: 35,
+        borderColor:'#ffdd55'
     },
     alternativasNum: {
-        borderBottomColor: "#bbb",
-        borderWidth: 2,
-        borderColor: '#f6aa1c',
+        borderColor: "#ffdd55",
+        borderWidth: 2,      
         lineHeight: 30,
-        borderRadius: 20,
-        borderBottomColor: "#bbb",
-        fontSize: 16,
-        backgroundColor: '#B71B1B',
-        color: '#FAFF00',
+        borderRadius: 40,       
+        fontSize: 20,
+        backgroundColor: '#9a031e',
+        color: '#ffffff',
         flex: 1,
         textAlign: 'center',
-        height: 35
+        height: 35,
+        fontWeight: 'bold',
     },
 }
 

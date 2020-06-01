@@ -10,16 +10,16 @@ const ModalAlternativas = ({ notificaResposta, visible, respostaEscolhida, respo
         >
             <View style={styles.centeredView}>
                 <View style={styles.modalView}>
-                    <Text style={{ fontSize: 22, textAlign: "center" }}>Você está certo disso? Posso perguntar ?</Text>
+                    <Text style={{ fontSize: 22, textAlign: "center" , color:'#9a031e'}}>Você está certo disso? Posso perguntar ?</Text>
                     <View style={{ flexDirection: "row" }}>
                         <TouchableOpacity style={styles.openButton} onPress={() => setModalVisible()}>
-                            <Text style={{ color: 'yellow', fontWeight: "bold" }}>Cancelar</Text>
+                            <Text style={{ color: '#ffdd55', fontWeight: "bold" }}>Cancelar</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.openButton, { ...styles, marginLeft: 10 }]}
                             onPress={() => {
                                 notificaResposta(respostaCerta === respostaEscolhida), setModalVisible()
                             }} >
-                            <Text style={{ fontSize: 15, color: 'yellow', fontWeight: "bold" }}>Confirmar</Text>
+                            <Text style={{ fontSize: 15, color: '#ffdd55', fontWeight: "bold" }}>Confirmar</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -29,7 +29,7 @@ const ModalAlternativas = ({ notificaResposta, visible, respostaEscolhida, respo
 }
 const styles = {
     openButton: {
-        backgroundColor: "blue",
+        backgroundColor: "#172178",
         borderRadius: 20,
         padding: 15,
         elevation: 15,
@@ -43,7 +43,8 @@ const styles = {
     },
     modalView: {
         margin: 20,
-        backgroundColor: "white",
+        backgroundColor: "#ffffff",
+        
         borderRadius: 20,
         padding: 35,
         alignItems: "center",

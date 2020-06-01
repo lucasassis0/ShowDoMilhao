@@ -2,12 +2,12 @@ import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 
 
-const CampoPosicao = (props) => {
+const BotaoPararPular = (props) => {
     return (
         <TouchableOpacity style={styles.styleButton}
             onPress={props.onPress}
         >
-            <Text style={{ color: '#ffffff' }}>{props.title}</Text>
+            <Text style={styles.buttonText}>{props.title}</Text>
         </TouchableOpacity>
 
     );
@@ -24,8 +24,8 @@ const styles = {
     styleButton: {
         borderColor: '#ffdd55',
         height: 40,
-        width: 350,
-        backgroundColor: '#46637b',
+        width: 180,
+        backgroundColor: '#9a031e',
         borderWidth: 2,
         margin: 20,
         borderRadius: 11,
@@ -39,6 +39,11 @@ const styles = {
         shadowRadius: 7.49,
         elevation: 12,
     },
+    buttonText: {
+        textAlign: "center",
+        fontSize: 20,
+        color: '#ffffff',
+    }
 
 }
-export default CampoPosicao;
+export default BotaoPararPular;

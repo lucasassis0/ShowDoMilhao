@@ -18,16 +18,16 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         borderWidth: 2,
-        backgroundColor: '#B71B1B',
+        backgroundColor: '#9a031e',
         flex: 1,
         borderRadius: 20,
-        borderBottomColor: "#bbb",
-        backgroundColor: '#B71B1B',
-        borderColor: '#f6aa1c',
+        borderColor: "#ffdd55",
+        
+        
     },
     perguntaTexto: {
         fontSize: 18,
-        color: '#FAFF00',
+        color: '#ffffff',
         alignSelf: 'center',
         fontWeight: 'bold',
     },

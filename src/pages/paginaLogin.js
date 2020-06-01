@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#EEF431',
         alignSelf: 'center',
         borderRadius: 15,
-        borderColor: 'gold',
+        borderColor: '#ffdd55',
         borderWidth: 1,
         paddingHorizontal: 10,
     },
