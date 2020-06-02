@@ -17,7 +17,6 @@ const PaginaJogo = ({ navigation }) => {
     const [buttonPulo, setButtonPulo] = useState(false)
 
     const numero = geraDificiculdade(perguntasRespondidas, indicePergunta)
-    console.log('numero: ', numero);
     const pergunta = perguntas[numero]
     const alternativa = pergunta.Answers
     const correta = pergunta.CorrectAnswer
@@ -31,7 +30,6 @@ const PaginaJogo = ({ navigation }) => {
     
 
     const notificaResposta = (acertou) => {
-        console.log('indicePergunta: ', indicePergunta);
         if(indicePergunta === 14){
             setButtonPulo(true)
         }
