@@ -6,10 +6,8 @@ import resultado from '../components/resultado'
 
 
 const PaginaFimDeJogo = ({ navigation, route }) => {
-    const res = 'vitoria'
-    const premio = '1 Milhão!'
-    const { indicePremio, resposta, reiniciar } = route.params.data
-    console.log('reiniciar: ', reiniciar);
+
+    const { indicePremio, resposta } = route.params.data
 
 
     return (
@@ -24,7 +22,7 @@ const PaginaFimDeJogo = ({ navigation, route }) => {
             </View>
             <View style={styles.containerButton}>
                 <TouchableOpacity style={styles.button}
-                    onPress={() => { navigation.navigate('PaginaJogo') }}>
+                    onPress={() => { navigation.push('PaginaJogo') }}>
                     <Text style={styles.buttonText}>Jogar Novamente</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}

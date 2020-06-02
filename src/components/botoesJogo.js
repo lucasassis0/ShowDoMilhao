@@ -3,7 +3,7 @@ import { Text, View, Modal, TouchableOpacity } from 'react-native'
 import { Button, Overlay } from 'react-native-elements'
 import BotaoPararPular from './botaoPularParar';
 
-const Botoes = ({ pulo, setPulo, reiniciaJogo, navigation, indicePergunta, buttonPulo, setButtonPulo }) => {
+const Botoes = ({ pulo, setPulo, navigation, indicePergunta, buttonPulo, setButtonPulo }) => {
     const premio = [1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 200000, 300000, 400000, 500000, 1000000]
     const parar = premio[indicePergunta] / 2
     const [modalVisible, setModalVisible] = useState(false);
@@ -13,7 +13,6 @@ const Botoes = ({ pulo, setPulo, reiniciaJogo, navigation, indicePergunta, butto
     }
 
     const parou = () => {
-        reiniciaJogo()
         setButtonPulo(false)
         navigation.navigate('Parou', { data: { indicePremio: indicePergunta, resposta: 'PAROU' } })
     }
