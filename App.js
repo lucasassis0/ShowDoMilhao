@@ -10,7 +10,8 @@ import PaginaRanking from './src/pages/paginaRanking'
 import PaginaFimDeJogo from './src/pages/paginaFimDeJogo'
 import PaginaDerrota from './src/pages/paginaDerrota'
 import PaginaLogin from './src/pages/paginaLogin'
-
+import PaginaCadastro from './src/pages/paginaCadastro'
+import PaginaEsqueceuASenha from './src/pages/paginaEsqueceuASenha'
 
 const Stack = createStackNavigator()
 
@@ -19,8 +20,10 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Inicio" screenOptions={{ headerShown: false, transitionSpec: { open: config, close: config  }}} >
         <Stack.Screen name="Inicio" component={Inicio}  />
-        <Stack.Screen name="PaginaHome" component={PaginaHome} />
         <Stack.Screen name="PaginaLogin" component={PaginaLogin} />
+        <Stack.Screen name="PaginaCadastro" component={PaginaCadastro} />
+        <Stack.Screen name="PaginaEsqueceuASenha" component={PaginaEsqueceuASenha} />
+        <Stack.Screen name="PaginaHome" component={PaginaHome} />
         <Stack.Screen name="PaginaJogo" component={PaginaJogo} />
         <Stack.Screen name="PaginaRanking" component={PaginaRanking} />
         <Stack.Screen name="Parou" component={PaginaFimDeJogo} />

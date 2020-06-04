@@ -11,26 +11,26 @@ const PaginaLogin = ({ navigation }) => {
                 <Image style={styles.logo} source={logo} />
             </View>
             <View style={styles.caixaDeLogin}>
-                <Text style={styles.textoLogin}>Login:</Text>
-                <TextInput style={styles.entradaDeTexto}
-                    placeholder='  Seu login'
-                    placeholderTextColor='gray'
-                />
-                <Text style={styles.textoSenha}>Senha:</Text>
-                <TextInput style={styles.entradaDeTexto}
-                    placeholder='  Sua senha'
-                    placeholderTextColor='gray'
-                />
-            </View>
-            <View>
-                <TouchableOpacity
-                 onPress={() => { navigation.navigate('PaginaCadastro') }}>
-                    <Text style={styles.botaoCadastrar}>Cadastrar-se</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                 onPress={() => { navigation.navigate('PaginaEsqueceuASenha') }}>
-                    <Text style={styles.botaoCadastrar}>Esqueceu a Senha?</Text>
-                </TouchableOpacity>
+                    <Text style={styles.textoCaixaDeLogin}>E-Mail:</Text>
+                    <TextInput style={styles.entradaDeTexto}
+                        placeholder='  Seu e-mail'
+                        placeholderTextColor='gray'
+                    />
+                    <Text style={styles.textoCaixaDeLogin}>Login:</Text>
+                    <TextInput style={styles.entradaDeTexto}
+                        placeholder='  Seu login'
+                        placeholderTextColor='gray'
+                    />
+                    <Text style={styles.textoCaixaDeLogin}>Senha:</Text>
+                    <TextInput style={styles.entradaDeTexto}
+                        placeholder='  Sua senha'
+                        placeholderTextColor='gray'
+                    />
+                    <Text style={styles.textoCaixaDeLogin}>Confirmar Senha:</Text>
+                    <TextInput style={styles.entradaDeTexto}
+                        placeholder='  Confirme sua senha'
+                        placeholderTextColor='gray'
+                    />
             </View>
             <View style={styles.containerButton}>
                 <TouchableOpacity style={styles.button}
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     },
     caixaDeLogin: {
         width: '85%',
-        flex: 1,
+        flex: 2,
         backgroundColor: 'gold',
         alignSelf: 'center',
         borderRadius: 15,
@@ -76,22 +76,11 @@ const styles = StyleSheet.create({
         marginHorizontal: 2,
         backgroundColor: '#c4c4c4'
     },
-    textoLogin: {
+    textoCaixaDeLogin: {
         paddingHorizontal: 6,
-        marginTop: 20,
+        paddingTop: 6,
         fontSize: 16,
-        fontWeight: 'bold',
-    },
-    textoSenha: {
-        paddingHorizontal: 6,
-        fontSize: 18,
         fontWeight: 'bold'
-    },
-    botaoCadastrar: {
-        textAlign: 'center',
-        color: 'gold',
-        fontSize: 20,
-
     },
     containerButton: {
         flex: 1

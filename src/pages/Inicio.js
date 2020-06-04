@@ -16,7 +16,7 @@ function Inicio({navigation}) {
             <View style={styles.buttonView}>
                 <TouchableOpacity 
                     style={styles.button}
-                    onPress={() => {navigation.navigate('PaginaHome')}}>
+                    onPress={() => {navigation.navigate('PaginaLogin')}}>
                     <Text style={styles.buttonText}>Iniciar</Text>
                 </TouchableOpacity>
             </View>
